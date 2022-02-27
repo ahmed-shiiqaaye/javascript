@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css"> 
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+    margin: 0%;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container{
+    margin-left: 50%;
+    margin-top: 100px;
+    transform: translateX(-50%);
+    padding: 20px;
+    width: 250px;
+    background-color: rgba(137, 43, 226, 0.342);
+    /* color: white; */
+    text-align: center;
+}
+p{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.value{
+    font-size: 40px;
+    margin: 10px 0;
+}
+.btn{
+    padding: 5px 15px;
+    color: black;
+    font-weight: 700;
+}
+    </style>
+   
+<div class="container">
+    <p>counter</p>
+    <h2 class="value">0</h2>
+    <div class="btns">
+        <button class="btn decrease">mius -</button>
+        <button class="btn reset">reset</button>
+        <button class="btn increase">plus +</button>
+    </div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="anime.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+        let decrease = document.querySelector('.decrease');
+let increase = document.querySelector('.increase');
+let reset = document.querySelector('.reset');
+let value = document.querySelector('.value');
+
+
+let count = 0;
+increase.addEventListener('click',function(){
+    count++
+    value.innerText = count
+    if(count > 0){
+        value.style.color = 'green'
+    }
+
+})
+decrease.addEventListener('click',function(){
+    count--
+    value.innerText = count
+    if(count < 0){
+        value.style.color = '#961e1e'
+    }
+
+})
+reset.addEventListener('click',function(){
+    count = 0
+    value.innerText = count
+        value.style.color = 'black'
+
+})
+
+    </script>
+</body>
+</html>
